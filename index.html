@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope">
+                <div class="card">
+                    <div class="text">
+                        <br> Happy Valentines's Day <br> <br>
+                        Tuệ Ngọc <br>
+                        J'adore tes yeux
+                    </div>
+                    <div class="heart"></div>
+                </div>
+            </div>
+            <div class="front"></div>
+        </div>
+    </div>
+    
+    <div class="hearts-container"></div>
+
+    <script>
+        const numberOfHearts = 100;
+        for (let i = 0; i < numberOfHearts; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.animationDelay = -(Math.random() * 20) + 's';
+            heart.style.bottom = -(Math.random() * 100) + 'vh'; // Use viewport height to ensure it's off-screen // Start from below the screen
+            document.body.appendChild(heart);
+        }
+    
+    document.querySelector('.valentines').addEventListener('mouseover', function() {
+        this.style.zIndex = 0; // Lower the z-index when the card is hovered
+    });
+    
+    document.querySelector('.valentines').addEventListener('mouseout', function() {
+        this.style.zIndex = 5; // Reset the z-index when not hovered
+    });
+    </script>
+</body>
+
+
+</html>
